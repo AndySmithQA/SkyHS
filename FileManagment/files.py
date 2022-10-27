@@ -31,9 +31,40 @@
 #
 # f.close()
 
-with open("dvla.txt", "r") as f:
-    pass
+# with open("dvla.txt", "r") as f:
+#     pass
+#
+#
+#
+# #
+# with open("pelican.txt", "a") as f:
+#     f.write("a wonderful bird the pelican,\n")
+#     f.write("its beak can hold more than his belican,\n")
+#     lines = ["he can take in his beak,\n" , "Enough food for a week,\n",
+#     "but im damned if I know how the helican.\n " ]
+#     f.writelines(lines)
+#
+# with open("pelican.txt", "r") as f:
+#     contents = f.readlines()
+#     print(type(contents))
+#     print(len(contents))
+#
+#
+# for line in contents:
+#     newline = line.strip("\n")
+#     newline = newline.strip(",")
+#     print(newline)
+shift = int(input("Enter Shift"))
+word = input("Enter Word")
+enc = []
 
+for letter in word:
+    if ord(letter) + shift > 122:
+        enc.append(chr(ord(letter) - 26 + shift))
+    else:
+        enc.append(chr(ord(letter) + shift))
+
+print(enc)
 
 
 
