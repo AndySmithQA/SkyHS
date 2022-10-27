@@ -28,7 +28,9 @@ while len(delegates) > 2:
     delegates.remove(del2)
     del3 = random.choice(delegates)
     delegates.remove(del3)
-    print(f"Group {loop} is {del1} and {del2}"
-          f" and {del3}")
+    del4 = random.choice(delegates)
+    delegates.remove(del4)
+    print(f"Group {loop} is {del1}, {del2}"
+          f", {del3}, {del4}")
     loop += 1
-print(f"Which leaves pair 6 {delegates[0:2]}" )
+print(f"Which leaves {delegates[0]} to join Group 4")
