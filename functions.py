@@ -20,6 +20,8 @@
 #     pass
 # else:
 #     valid = "no"
+import math
+
 
 # def add(num1, num2, name):
 #     new = num1 + num2
@@ -101,17 +103,44 @@
 # scope_test(myvar)
 # print(myvar)#after subroutine
 
-score = 46
+#score = 46
 
-def score_change(score,points):
-    global score
-    newscore = score
-    newscore += points
-    return f"Your new Credit Score is {newscore}"
+# def score_change(score,points):
+#     newscore = score
+#     newscore += points
+#     return f"Your new Credit Score is {newscore}"
+#
+# print(score_change(score,8))
+# print(score)
 
-print(score_change(score,8))
-print(score)
+def circle(r):
+    return f"The area of that circle is {math.pi * r**2:6.2f} cm2"
+def triangle():
+    base = int(input("Input base"))
+    height = int(input("Input Height"))
+    area = 0.5*base*height
+    return f"the area of that triangle is {area} cm2"
+def rectangle(h,l):
+    return f"the area of that rectangle is {h*l} cm2"
 
+
+while True:
+    choice = input("C for cirlce : T for Triangle : R for Rectangle (or X to exit) ").upper()
+    if choice in ("C"):
+        radius = int(input("Input Radius"))
+        print(circle(radius))
+    elif choice in ("T"):
+        print(triangle())
+    elif choice in ("R"):
+        length = int(input("Input Length"))
+        height = int(input("Input Height"))
+        print(rectangle(height, length))
+    elif choice in ("X"):
+        break
+    else:
+        print("Invalid choice")
+
+print("Thank You - Goodbye")
 
 
 
