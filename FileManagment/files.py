@@ -54,17 +54,30 @@
 #     newline = line.strip("\n")
 #     newline = newline.strip(",")
 #     print(newline)
-shift = int(input("Enter Shift"))
-word = input("Enter Word")
-enc = []
+def en(shift, message):
+    encr = []
+    for letter in message:
+        if ord(letter) + shift > 122:
+            encr.append(chr(ord(letter) - 26 + shift))
+        else:
+            encr.append(chr(ord(letter) + shift))
 
-for letter in word:
-    if ord(letter) + shift > 122:
-        enc.append(chr(ord(letter) - 26 + shift))
-    else:
-        enc.append(chr(ord(letter) + shift))
-
-print(enc)
+    print(encr)
+    with open("enc.txt", "a") as enc:
+        enc.writelines(encr)
 
 
+def de(shift):
+    with open("enc.txt", "r") as enc:
+        encr = []
+        mess = enc.readlines()
+        for cha in mess:
+            for ch in cha:
+                if ord(ch) + shift < 97:
+                    encr.append(chr(ord(ch) + 26 - shift))
+                else:
+                    encr.append(chr(ord(ch) - shift))
+    return encr
 
+#en(2,"Banana")
+print(de(2))
