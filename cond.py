@@ -16,6 +16,8 @@
 #print(5 > 4 and (8 > 6 or 5 > 7))
 print(5 > 3  or 5 > 8)
 
+print("Hello")
+
 #
 # name = []
 #
